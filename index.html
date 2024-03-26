@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Ehan Ali 
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To create a functioning app that displays a bordered canvas with the ability to add elements like your name, an image, or a rectangle. 
  
-Known Issues:
-blah, blah, blah, blah
+Known Issues: No known issues 
+
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -38,6 +38,44 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
+
+
+//my function for adding a rectangle 
+function drawRect(){ 
+   var rectCanvas = document.getElementById("myCanvas"); 
+   var rectContext = rectCanvas.getContext("2d");
+   rectContext.fillRect(10, 15, 150, 75); 
+}
+
+
+
+function addName(){
+   var c = document.getElementById("myCanvas"); 
+   var ctx = c.getContext("2d"); 
+   ctx.font = "24px Arial"; //Font of text
+   ctx.fillText("Ehan Ali",25,60)
+}
+
+
+
+function eraseCanvas() { 
+  var eraseCanvas = 
+  document.getElementById("myCanvas"); 
+  eraseCanvas.width = eraseCanvas.width;
+}
+
+function addImage() { 
+  var img = new Image(); 
+  img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThuEC_5OPvXllpZKD18twQRVtII20H0G2sDQ&usqp=CAU'
+  img.addEventListener('load', function() {
+  var canvas = document.getElementById('myCanvas'); 
+  var ctx = canvas.getContext('2d'); 
+  ctx.drawImage(img, 0, 0); }, false);
+
+
+
+
 </script>
 
 
@@ -68,9 +106,10 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Content goes here.</p>
+	<p>Canvas Art!</p>
+        <a href="#one" class="w3-btn w3-green w3-round"> Start Drawing </a>
 		
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
