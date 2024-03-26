@@ -43,36 +43,38 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
 //my function for adding a rectangle 
 function drawRect(){ 
-   var rectCanvas = document.getElementById("myCanvas"); 
-   var rectContext = rectCanvas.getContext("2d");
-   rectContext.fillRect(10, 15, 150, 75); 
+   var rectCanvas = document.getElementById("myCanvas"); //variable to display onto canvas
+   var rectContext = rectCanvas.getContext("2d"); //variable to set rectangle conditions 
+   rectContext.fillRect(100, 150, 150, 75); // rectangle conditions 
 }
 
 
-
+//my function for adding my name 
 function addName(){
-   var c = document.getElementById("myCanvas"); 
-   var ctx = c.getContext("2d"); 
-   ctx.font = "24px Arial"; //Font of text
-   ctx.fillText("Ehan Ali",25,60)
+   var c = document.getElementById("myCanvas"); //variable to display onto canvas
+   var ctx = c.getContext("2d"); //variable for setting name conditions 
+   ctx.font = "24px Arial"; //font of text
+   ctx.fillText("Ehan Ali",25,60) //conditions for my name 
 }
 
 
-
+// my function for erasing the screen 
 function erase() { 
   var eraseCanvas = 
-  document.getElementById("myCanvas"); 
+  document.getElementById("myCanvas"); //variable to display onto canvas
   eraseCanvas.width = eraseCanvas.width;
 }
 
+//my function for adding cat image 
 function addImage() { 
-  var img = new Image(); 
+  var img = new Image(); //image variable 
+  // variable to pull image from jpg link
   img.src = 'https://www.meme-arsenal.com/memes/2ad2eef7e25bac17bf111fdedfaad35b.jpg'
   img.addEventListener('load', function() {
-  var canvas = document.getElementById('myCanvas'); 
-  var ctx = canvas.getContext('2d'); 
+  var canvas = document.getElementById('myCanvas'); //variable to display onto canvas
+  var ctx = canvas.getContext('2d'); //variable to set image conditions 
   ctx.drawImage(img, 0, 0); }, false);
-
+}
 
 
 
@@ -122,16 +124,18 @@ function addImage() {
    <div id="content" class="w3-container"> 
         <p>You may begin drawing!</p>
 
+   //canvas conditions with sizing 
+   //spacing have been added between all the buttons for easy viewing 
 
    <canvas id="myCanvas" width="700" height="375" style="border:1px solid #000000;">
    </canvas>
    <p> </p>
    
-
+   //button for drawing the rectangle 
    <a onclick= "drawRect();" class="w3-btn w3-green"> Draw Rectangle </a>
    <p> </p>
 
-   
+   //button for 
    <a onclick= "addName();" class="w3-btn w3-green"> Add Name </a>
    <p> </p>
 
